@@ -7,4 +7,4 @@
     Protected Config (Protect you personal “preconfigured” configs)
     Character Backup (Create character backup on every new server connection)
     Automatically restore protected mods & configs on application exit
-[Read more at Valheim Mod Sync](https://easy-develope.ch/game-multiboxer-and-bot/strategy-manager-beta/)
+[Read more at Valheim Mod Sync](https://valheim-mod-sync.easy-develope.ch/)
