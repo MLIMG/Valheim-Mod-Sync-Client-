@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <local_server_list>
+    <id>175</id>
+    <name>My Local Server</name>
+    <password>123</password>
+  </local_server_list>
+  <local_server_list>
+    <id>104</id>
+    <name>MyGingerWorld</name>
+    <password>compact.ch1</password>
+  </local_server_list>
+  <protected_configs>
+    <name>BepInEx.cfg</name>
+  </protected_configs>
+  <protected_configs>
+    <name>org.bepinex.valheim.displayinfo.cfg</name>
+  </protected_configs>
+  <protected_plugins>
+    <name>Valheim.DisplayBepInExInfo.dll</name>
+  </protected_plugins>
+</NewDataSet>

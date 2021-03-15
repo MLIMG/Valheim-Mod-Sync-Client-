@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <local_server_list>
+    <id>104</id>
+    <name>MyGingerWorld</name>
+  </local_server_list>
+  <protected_configs>
+    <name>BepInEx.cfg</name>
+  </protected_configs>
+  <protected_plugins>
+    <name>Valheim.DisplayBepInExInfo.dll</name>
+  </protected_plugins>
+</NewDataSet>
