@@ -1,9 +1,0 @@
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\bin\Release\Valheim Mod Sync.exe.config
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\bin\Release\Valheim Mod Sync.exe
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\bin\Release\Valheim Mod Sync.pdb
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\obj\Release\Valheim_Mod_Sync.MainScreen.resources
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\obj\Release\Valheim_Mod_Sync.Properties.Resources.resources
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\obj\Release\Valheim Mod Sync.csproj.GenerateResource.cache
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\obj\Release\Valheim Mod Sync.exe
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\obj\Release\Valheim Mod Sync.pdb
-C:\Users\david\source\repos\Valheim Mod Sync\Valheim Mod Sync\obj\Release\Valheim Mod Sync.csprojAssemblyReference.cache
