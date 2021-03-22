@@ -11,7 +11,7 @@ namespace Valheim_Mod_Sync
 {
     class VersionControl
     {
-        string current_version = "1.0.1.beta";
+        string current_version = "1.0.2.beta";
 
         public VersionControl() { }
 

@@ -49,17 +49,25 @@
             this.dataColumn3 = new System.Data.DataColumn();
             this.protected_plugins = new System.Data.DataTable();
             this.dataColumn4 = new System.Data.DataColumn();
+            this.app_settings = new System.Data.DataTable();
+            this.dataColumn6 = new System.Data.DataColumn();
+            this.dataColumn7 = new System.Data.DataColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.local_server_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protected_configs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protected_plugins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.app_settings)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
@@ -68,15 +76,16 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(16, 32);
+            this.textBox1.Location = new System.Drawing.Point(16, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 26);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.key_press_enter_on_key);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(135, 32);
+            this.button1.Location = new System.Drawing.Point(135, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 26);
             this.button1.TabIndex = 2;
@@ -87,7 +96,7 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 104);
+            this.listView1.Location = new System.Drawing.Point(16, 123);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(264, 154);
             this.listView1.TabIndex = 3;
@@ -98,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 81);
+            this.label3.Location = new System.Drawing.Point(12, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 20);
             this.label3.TabIndex = 5;
@@ -108,7 +117,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 281);
+            this.label4.Location = new System.Drawing.Point(12, 300);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
             this.label4.TabIndex = 7;
@@ -117,7 +126,7 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(16, 304);
+            this.checkedListBox1.Location = new System.Drawing.Point(16, 323);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(264, 154);
             this.checkedListBox1.TabIndex = 8;
@@ -126,7 +135,7 @@
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(286, 303);
+            this.checkedListBox2.Location = new System.Drawing.Point(286, 322);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(264, 154);
             this.checkedListBox2.TabIndex = 9;
@@ -136,7 +145,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(282, 280);
+            this.label2.Location = new System.Drawing.Point(282, 299);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 20);
             this.label2.TabIndex = 10;
@@ -145,7 +154,7 @@
             // listView2
             // 
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(286, 104);
+            this.listView2.Location = new System.Drawing.Point(286, 123);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(264, 154);
             this.listView2.TabIndex = 11;
@@ -156,7 +165,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(282, 81);
+            this.label5.Location = new System.Drawing.Point(282, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 20);
             this.label5.TabIndex = 12;
@@ -168,7 +177,8 @@
             this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
             this.local_server_list,
             this.protected_configs,
-            this.protected_plugins});
+            this.protected_plugins,
+            this.app_settings});
             // 
             // local_server_list
             // 
@@ -229,12 +239,55 @@
             this.dataColumn4.AllowDBNull = false;
             this.dataColumn4.ColumnName = "name";
             // 
+            // app_settings
+            // 
+            this.app_settings.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn6,
+            this.dataColumn7});
+            this.app_settings.TableName = "app_settings";
+            // 
+            // dataColumn6
+            // 
+            this.dataColumn6.ColumnName = "config_name";
+            // 
+            // dataColumn7
+            // 
+            this.dataColumn7.ColumnName = "config_value";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(567, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("menuToolStripMenuItem.Image")));
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.toolStripMenuItem1.Text = "Settings";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(567, 469);
+            this.ClientSize = new System.Drawing.Size(567, 491);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.label2);
@@ -248,6 +301,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainScreen";
             this.Text = "Valheim Mod Sync";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.on_close_form);
@@ -255,6 +309,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.local_server_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protected_configs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protected_plugins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.app_settings)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,15 +330,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label5;
-        private System.Data.DataSet dataSet1;
-        private System.Data.DataTable local_server_list;
-        private System.Data.DataColumn dataColumn1;
-        private System.Data.DataColumn dataColumn2;
-        private System.Data.DataTable protected_configs;
-        private System.Data.DataColumn dataColumn3;
-        private System.Data.DataTable protected_plugins;
-        private System.Data.DataColumn dataColumn4;
-        private System.Data.DataColumn dataColumn5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Data.DataTable local_server_list;
+        public System.Data.DataColumn dataColumn1;
+        public System.Data.DataColumn dataColumn2;
+        public System.Data.DataTable protected_configs;
+        public System.Data.DataColumn dataColumn3;
+        public System.Data.DataTable protected_plugins;
+        public System.Data.DataColumn dataColumn4;
+        public System.Data.DataColumn dataColumn5;
+        public System.Data.DataTable app_settings;
+        public System.Data.DataColumn dataColumn6;
+        public System.Data.DataColumn dataColumn7;
+        public System.Data.DataSet dataSet1;
     }
 }
 

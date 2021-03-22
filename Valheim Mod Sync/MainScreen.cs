@@ -20,6 +20,7 @@ namespace Valheim_Mod_Sync
 {
     public partial class MainScreen : Form
     {
+        private Settings settingsform = new Settings();
         Process vh_process;
         BepInExVcontrol bievc = new BepInExVcontrol();
         public MainScreen()
@@ -221,6 +222,11 @@ namespace Valheim_Mod_Sync
             dataSet1.WriteXml(filePath);
         }
 
+        public DataSet main_dataset()
+        {
+            return dataSet1;
+        }
+
         private void restore_default_data()
         {
             var plugins_info = new DirectoryInfo("BepInEx/plugins/");
@@ -340,6 +346,7 @@ namespace Valheim_Mod_Sync
                 {
                     protected_plugins.Rows.Remove(foundRows[0]);
                 }
+                File.Delete("BepInEx/plugins/" + checkedListBox1.SelectedItem.ToString());
             }
         }
 
@@ -371,6 +378,7 @@ namespace Valheim_Mod_Sync
                 {
                     protected_configs.Rows.Remove(foundRows[0]);
                 }
+                File.Delete("BepInEx/config/" + checkedListBox2.SelectedItem.ToString());
             }
         }
 
@@ -539,12 +547,22 @@ namespace Valheim_Mod_Sync
                             local_server_list.Rows.Add(workRow);
                             string exec_data;
                             Console.WriteLine(content);
+
+                            //get custom commands
+                            string custom_command = "";
+                            DataRow[] foundRows_command;
+                            foundRows_command = dataSet1.Tables["app_settings"].Select("config_name = 'custom_commands'");
+                            if (foundRows_command.Length > 0)
+                            {
+                                custom_command = foundRows_command[0]["config_value"].ToString();
+                            }
+
                             if (content.Equals(":"))
                             {
-                                exec_data = " -applaunch 892970 +password " + result;
+                                exec_data = " -applaunch 892970 +password " + result + " " + custom_command;
                             } else
                             {
-                                exec_data = " -applaunch 892970 +connect " + content + " +password " + result;
+                                exec_data = " -applaunch 892970 +connect " + content + " +password " + result + " " + custom_command;
                             }
                             Console.WriteLine(exec_data);
                             vh_process = Process.Start(@steam_exe, exec_data);
@@ -578,6 +596,20 @@ namespace Valheim_Mod_Sync
         private void global_server_clik(object sender, EventArgs e)
         {
             string server_name = listView2.SelectedItems[0].Name;
+        }
+
+        private void key_press_enter_on_key(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(null, null);
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            settingsform = new Settings();
+            settingsform.Show();
         }
     }
     public static class Prompt
